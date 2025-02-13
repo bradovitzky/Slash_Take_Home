@@ -62,9 +62,9 @@ def main():
     # print("Transactions example:\n", transactions[0])
     # print("Entities example:\n",entities[0])
 
-    conn = duckdb.connect('dev.duckdb')
-    print(conn.execute("SELECT DISTINCT card_status FROM card_events").fetchall())
-    conn.close()
+    # conn = duckdb.connect('dev.duckdb')
+    # print(conn.execute("SELECT DISTINCT card_status FROM card_events").fetchall())
+    # conn.close()
     """
     Events example:
     {'SLASH_ACCOUNT_ID': 'sa_7r1z5obxg0v8', 'CARD_EVENT_ID': 'ce_1l5a1kttd9cqi', 'CARD_ID': 'c_p3cfa3lo4hvz', 'EVENT_TYPE': 'update', 'CARD_STATUS': 'active', 'TIMESTAMP': datetime.datetime(2024, 7, 21, 21, 50, 14, 817000)}
