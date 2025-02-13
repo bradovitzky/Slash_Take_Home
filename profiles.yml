@@ -1,0 +1,8 @@
+slash_analytics_take_home:
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      threads: 2
+
+  target: dev

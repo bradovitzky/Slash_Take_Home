@@ -1,0 +1,56 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'slash_analytics_take_home'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'slash_analytics_take_home'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  slash_analytics_take_home:
+    example:
+      +materialized: table
+
+seeds:
+  slash_analytics_take_home:
+    card_events:
+      +column_types:
+        SLASH_ACCOUNT_ID: varchar
+        CARD_EVENT_ID: varchar
+        CARD_ID: varchar
+        EVENT_TYPE: varchar
+        CARD_STATUS: varchar
+        TIMESTAMP: timestamp
+    card_transactions:
+      +column_types:
+        TRANSACTION_ID: varchar
+        SUBACCOUNT_ID: varchar
+        CARD_ID: varchar
+        ACCOUNT_TYPE: varchar
+        TRANSACTION_AMOUNT: float
+        ORIGINAL_CURRENCY_CODE: varchar
+        MERCHANT_DESCRIPTION: varchar
+        MERCHANT_CATEGORY_CODE: varchar
+        MERCHANT_COUNTRY: varchar
+        TIMESTAMP: timestamp
+    entity:
+      +column_types:
+        ENTITY_ID: varchar
+        SUBACCOUNT_ID: varchar
+        ACCOUNT_CREATION_DATE: timestamp
